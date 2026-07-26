@@ -23,6 +23,17 @@ Read **[`00_START_HERE/Context_Brief.md`](00_START_HERE/Context_Brief.md)** — 
 | `06_Presentation/` | Visual infographic slide deck (`.pptx`) |
 | `07_Media/` | Audio explainer (`.m4a`) |
 
+## The scanners (`01_Scanner_Scripts/`)
+
+Two custom, cross-platform inventory scripts were written for this assessment — one for Windows, one for macOS — so the same network could be mapped from every machine on it. Both are **read-only**: they inventory and test reachability only, and do **not** attempt passwords, exploit vulnerabilities, bypass firewalls, or change any configuration. Each auto-detects the local private (RFC 1918) subnet, runs an ICMP/ARP host-discovery sweep, resolves names where possible, checks a small set of common TCP service ports (e.g. SSH, SMB, HTTP/S, Synology DSM), and collects the host's own adapters, routes, gateway, and neighbor cache.
+
+| Script | Platform | Description |
+|---|---|---|
+| **`Home_Network_Inventory_v1.5.ps1`** | Windows (PowerShell 5.1+ / PowerShell 7) | Discovers active private subnets on the PC, scans them, resolves DNS/NetBIOS names, tests common TCP ports, and exports a full report set — **HTML, PDF** (rendered via Edge/Chrome, with Word as fallback), **CSV, JSON**, and a run **log**. Options: `-Subnets`, `-SkipPortScan`, `-OpenReport`. *v1.5 also lists devices that have no open TCP ports.* |
+| **`Mac_Network_Inventory_v1.1.sh`** | macOS (Bash 3.2, the version shipped with macOS) | The macOS port of the same tool. Scans RFC 1918 IPv4 only and produces the matching outputs — **PDF, HTML, CSV, JSON, TXT**, and a **log**. Options: `--subnet`, `--open-report`. *v1.1 adds parallel discovery, correct CIDR filtering, MAC collection, multicast exclusion, and filtered ARP output.* |
+
+Running both across the different computers is what produced the three vantage points below — and revealed that each machine could only see its own router's LAN.
+
 ## The three scan vantage points
 
 | Folder | Computer | Its IP | Sees |
