@@ -1,0 +1,6 @@
+﻿"IPAddress","HostName","NetBIOSName","MacAddress","Interface","Reachability","PingMs","IsDefaultGateway","LikelyDevice","OpenTcpServices","Notes"
+"192.168.0.1",,,"██:██:██:██:██:██","Ethernet","ICMP reply","0","True","Router / default gateway","53/; 80/; 443/","Configured as a default gateway on this PC."
+"192.168.0.2",,,"██:██:██:██:██:██","Ethernet","ICMP reply","0","False","Synology NAS (likely)","22/; 80/; 139/; 443/; 445/; 5000/; 5001/; 6690/",""
+"192.168.0.118",,,"██:██:██:██:██:██","Ethernet","ICMP reply","0","False","Unknown network device","",""
+"192.168.0.135","host.docker.internal",,,,"ICMP reply","0","False","This Windows PC","135/; 139/; 445/","Address belongs to the computer running this report."
+"192.168.0.201",,,"██:██:██:██:██:██","Ethernet","ICMP reply","0","False","Synology NAS (likely)","5000/",""

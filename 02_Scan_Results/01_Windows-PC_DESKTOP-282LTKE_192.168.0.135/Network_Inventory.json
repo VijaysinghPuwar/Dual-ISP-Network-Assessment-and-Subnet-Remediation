@@ -1,0 +1,459 @@
+﻿{
+    "Summary":  {
+                    "ReportGenerated":  "\/Date(1785047977737)\/",
+                    "Duration":  "00:02:31.0230884",
+                    "SubnetsRequested":  "192.168.0.0/24",
+                    "SubnetsScanned":  1,
+                    "AddressesTested":  254,
+                    "DevicesDiscovered":  5,
+                    "DefaultGateways":  "192.168.0.1",
+                    "OpenTcpServicesFound":  15,
+                    "PortScanEnabled":  true,
+                    "RunningAsAdmin":  true
+                },
+    "LocalSystem":  {
+                        "ComputerName":  "DESKTOP-282LTKE",
+                        "CurrentUser":  "DESKTOP-282LTKE\\Vijaysingh",
+                        "Manufacturer":  "ASUS",
+                        "Model":  "System Product Name",
+                        "OperatingSystem":  "Microsoft Windows 11 Pro",
+                        "OSVersion":  "10.0.26200",
+                        "OSBuild":  "26200",
+                        "InstalledRAMGB":  15.21,
+                        "Processor":  "AMD Ryzen 7 7700X 8-Core Processor             ",
+                        "PowerShellVersion":  "5.1.26100.8894",
+                        "RunningAsAdmin":  true,
+                        "ScanStarted":  "\/Date(1785047826714)\/"
+                    },
+    "NetworkAdapters":  [
+                            {
+                                "InterfaceIndex":  2,
+                                "Alias":  "Ethernet 2",
+                                "Description":  "VirtualBox Host-Only Ethernet Adapter",
+                                "Status":  "Up",
+                                "LinkSpeed":  "1 Gbps",
+                                "MacAddress":  "██:██:██:██:██:██",
+                                "IPv4":  "192.168.56.1/24",
+                                "DefaultGateway":  "",
+                                "DnsServers":  "fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3",
+                                "DhcpEnabled":  false
+                            },
+                            {
+                                "InterfaceIndex":  10,
+                                "Alias":  "Ethernet",
+                                "Description":  "Realtek Gaming 2.5GbE Family Controller",
+                                "Status":  "Up",
+                                "LinkSpeed":  "1 Gbps",
+                                "MacAddress":  "██:██:██:██:██:██",
+                                "IPv4":  "192.168.0.135/24",
+                                "DefaultGateway":  "192.168.0.1",
+                                "DnsServers":  "192.168.0.1",
+                                "DhcpEnabled":  true
+                            },
+                            {
+                                "InterfaceIndex":  16,
+                                "Alias":  "WiFi",
+                                "Description":  "Realtek 8852BE Wireless LAN WiFi 6 PCI-E NIC",
+                                "Status":  "Disconnected",
+                                "LinkSpeed":  "0 bps",
+                                "MacAddress":  "██:██:██:██:██:██",
+                                "IPv4":  "169.254.207.113/16",
+                                "DefaultGateway":  "",
+                                "DnsServers":  "192.168.0.1",
+                                "DhcpEnabled":  null
+                            }
+                        ],
+    "SubnetResults":  [
+                          {
+                              "Subnet":  "192.168.0.0/24",
+                              "HostCapacity":  254,
+                              "AddressesTested":  254,
+                              "PingResponsive":  5,
+                              "Status":  "Scanned"
+                          }
+                      ],
+    "Devices":  [
+                    {
+                        "IPAddress":  "192.168.0.1",
+                        "HostName":  null,
+                        "NetBIOSName":  null,
+                        "MacAddress":  "██:██:██:██:██:██",
+                        "Interface":  "Ethernet",
+                        "Reachability":  "ICMP reply",
+                        "PingMs":  0,
+                        "IsDefaultGateway":  true,
+                        "LikelyDevice":  "Router / default gateway",
+                        "OpenTcpServices":  "53/; 80/; 443/",
+                        "Notes":  "Configured as a default gateway on this PC."
+                    },
+                    {
+                        "IPAddress":  "192.168.0.2",
+                        "HostName":  null,
+                        "NetBIOSName":  null,
+                        "MacAddress":  "██:██:██:██:██:██",
+                        "Interface":  "Ethernet",
+                        "Reachability":  "ICMP reply",
+                        "PingMs":  0,
+                        "IsDefaultGateway":  false,
+                        "LikelyDevice":  "Synology NAS (likely)",
+                        "OpenTcpServices":  "22/; 80/; 139/; 443/; 445/; 5000/; 5001/; 6690/",
+                        "Notes":  ""
+                    },
+                    {
+                        "IPAddress":  "192.168.0.118",
+                        "HostName":  null,
+                        "NetBIOSName":  null,
+                        "MacAddress":  "██:██:██:██:██:██",
+                        "Interface":  "Ethernet",
+                        "Reachability":  "ICMP reply",
+                        "PingMs":  0,
+                        "IsDefaultGateway":  false,
+                        "LikelyDevice":  "Unknown network device",
+                        "OpenTcpServices":  "",
+                        "Notes":  ""
+                    },
+                    {
+                        "IPAddress":  "192.168.0.135",
+                        "HostName":  "host.docker.internal",
+                        "NetBIOSName":  null,
+                        "MacAddress":  null,
+                        "Interface":  null,
+                        "Reachability":  "ICMP reply",
+                        "PingMs":  0,
+                        "IsDefaultGateway":  false,
+                        "LikelyDevice":  "This Windows PC",
+                        "OpenTcpServices":  "135/; 139/; 445/",
+                        "Notes":  "Address belongs to the computer running this report."
+                    },
+                    {
+                        "IPAddress":  "192.168.0.201",
+                        "HostName":  null,
+                        "NetBIOSName":  null,
+                        "MacAddress":  "██:██:██:██:██:██",
+                        "Interface":  "Ethernet",
+                        "Reachability":  "ICMP reply",
+                        "PingMs":  0,
+                        "IsDefaultGateway":  false,
+                        "LikelyDevice":  "Synology NAS (likely)",
+                        "OpenTcpServices":  "5000/",
+                        "Notes":  ""
+                    }
+                ],
+    "IPv4Routes":  [
+                       {
+                           "DestinationPrefix":  "0.0.0.0/0",
+                           "NextHop":  "192.168.0.1",
+                           "InterfaceAlias":  "Ethernet",
+                           "RouteMetric":  0,
+                           "Protocol":  3,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "127.0.0.0/8",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Loopback Pseudo-Interface 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "127.0.0.1/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Loopback Pseudo-Interface 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "127.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Loopback Pseudo-Interface 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "192.168.0.0/24",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "192.168.0.135/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "192.168.0.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "192.168.56.0/24",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "192.168.56.1/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "192.168.56.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "224.0.0.0/4",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Loopback Pseudo-Interface 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "224.0.0.0/4",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Local Area Connection* 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "224.0.0.0/4",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Local Area Connection* 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "224.0.0.0/4",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "WiFi",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "224.0.0.0/4",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "224.0.0.0/4",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "255.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "WiFi",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "255.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Local Area Connection* 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "255.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Local Area Connection* 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "255.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Loopback Pseudo-Interface 1",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "255.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet 2",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       },
+                       {
+                           "DestinationPrefix":  "255.255.255.255/32",
+                           "NextHop":  "0.0.0.0",
+                           "InterfaceAlias":  "Ethernet",
+                           "RouteMetric":  256,
+                           "Protocol":  2,
+                           "State":  0
+                       }
+                   ],
+    "NeighborCache":  [
+                          {
+                              "IPAddress":  "192.168.0.1",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  5,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "192.168.0.118",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  4,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "192.168.0.2",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  5,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "192.168.0.201",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  5,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.2",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.22",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.251",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.252",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "239.255.255.250",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.2",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet 2"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.22",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet 2"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.251",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet 2"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.252",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet 2"
+                          },
+                          {
+                              "IPAddress":  "239.255.255.250",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Ethernet 2"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.2",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Local Area Connection* 1"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.22",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Local Area Connection* 1"
+                          },
+                          {
+                              "IPAddress":  "239.255.255.250",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Local Area Connection* 1"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.2",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Local Area Connection* 2"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.22",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "Local Area Connection* 2"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.2",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "WiFi"
+                          },
+                          {
+                              "IPAddress":  "224.0.0.22",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "WiFi"
+                          },
+                          {
+                              "IPAddress":  "239.255.255.250",
+                              "LinkLayerAddress":  "██:██:██:██:██:██",
+                              "State":  6,
+                              "InterfaceAlias":  "WiFi"
+                          }
+                      ],
+    "Warnings":  [
+                     "Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.",
+                     "A second router operating in access-point/bridge mode should appear on the same subnet. A double-NAT router can hide its downstream devices unless this PC has a route and the router permits traffic between subnets.",
+                     "Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear."
+                 ]
+}

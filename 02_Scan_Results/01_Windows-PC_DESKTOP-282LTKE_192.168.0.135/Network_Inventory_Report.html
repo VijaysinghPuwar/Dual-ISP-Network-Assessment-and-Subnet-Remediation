@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Windows Private Network Inventory</title>
+<style>
+@page { size: A4 landscape; margin: 10mm; }
+* { box-sizing: border-box; }
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    color: #172033;
+    background: #f3f6fa;
+    font-size: 10.5px;
+}
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+}
+.header {
+    background: linear-gradient(135deg, #132238, #274b6d);
+    color: white;
+    padding: 24px 28px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+.header h1 {
+    margin: 0 0 6px 0;
+    font-size: 28px;
+}
+.header p {
+    margin: 4px 0;
+    opacity: 0.92;
+}
+.badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 9px;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 999px;
+    font-size: 9px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.card {
+    background: white;
+    border: 1px solid #dbe3ed;
+    border-radius: 10px;
+    padding: 13px 15px;
+}
+.card span {
+    display: block;
+    color: #526177;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.card strong {
+    display: block;
+    font-size: 21px;
+    margin-top: 4px;
+}
+.section {
+    background: white;
+    border: 1px solid #dbe3ed;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+.section h2 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    color: #173f63;
+    border-bottom: 2px solid #e8eef5;
+    padding-bottom: 7px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+th, td {
+    border: 1px solid #d8e0ea;
+    padding: 6px 7px;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+th {
+    background: #eaf1f8;
+    color: #173f63;
+    font-weight: 650;
+}
+tr:nth-child(even) td {
+    background: #f8fafc;
+}
+.muted {
+    color: #6c7889;
+    font-style: italic;
+}
+.warning {
+    border-left: 5px solid #bf7a00;
+    background: #fff8e8;
+}
+.footer {
+    color: #657287;
+    font-size: 9px;
+    text-align: center;
+    padding: 8px;
+}
+code {
+    background: #edf2f7;
+    border-radius: 4px;
+    padding: 1px 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Windows Private Network Inventory</h1>
+    <p>Computer: DESKTOP-282LTKE</p>
+    <p>Generated: 2026-07-26 12:09:37 +05:30</p>
+    <div class="badge">Authorized RFC1918 inventory - no credential attacks or vulnerability exploitation</div>
+  </div>
+
+  <div class="cards">
+  <div class="card"><span>Devices</span><strong>5</strong></div>
+  <div class="card"><span>Addresses tested</span><strong>254</strong></div>
+  <div class="card"><span>Subnets scanned</span><strong>1</strong></div>
+  <div class="card"><span>Open TCP services</span><strong>15</strong></div>
+</div>
+
+  <div class="section">
+    <h2>Executive Summary</h2>
+    <table>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<tr><th>ReportGenerated</th><th>Duration</th><th>SubnetsRequested</th><th>SubnetsScanned</th><th>AddressesTested</th><th>DevicesDiscovered</th><th>DefaultGateways</th><th>OpenTcpServicesFound</th><th>PortScanEnabled</th><th>RunningAsAdmin</th></tr>
+<tr><td>26/07/2026 12:09:37 PM</td><td>00:02:31.0230884</td><td>192.168.0.0/24</td><td>1</td><td>254</td><td>5</td><td>192.168.0.1</td><td>15</td><td>True</td><td>True</td></tr>
+</table>
+  </div>
+
+  <div class="section">
+    <h2>Discovered Device Inventory</h2>
+    <table>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<tr><th>IPAddress</th><th>HostName</th><th>NetBIOSName</th><th>MacAddress</th><th>Interface</th><th>Reachability</th><th>PingMs</th><th>IsDefaultGateway</th><th>LikelyDevice</th><th>OpenTcpServices</th><th>Notes</th></tr>
+<tr><td>192.168.0.1</td><td></td><td></td><td>██:██:██:██:██:██</td><td>Ethernet</td><td>ICMP reply</td><td>0</td><td>True</td><td>Router / default gateway</td><td>53/; 80/; 443/</td><td>Configured as a default gateway on this PC.</td></tr>
+<tr><td>192.168.0.2</td><td></td><td></td><td>██:██:██:██:██:██</td><td>Ethernet</td><td>ICMP reply</td><td>0</td><td>False</td><td>Synology NAS (likely)</td><td>22/; 80/; 139/; 443/; 445/; 5000/; 5001/; 6690/</td><td></td></tr>
+<tr><td>192.168.0.118</td><td></td><td></td><td>██:██:██:██:██:██</td><td>Ethernet</td><td>ICMP reply</td><td>0</td><td>False</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>192.168.0.135</td><td>host.docker.internal</td><td></td><td></td><td></td><td>ICMP reply</td><td>0</td><td>False</td><td>This Windows PC</td><td>135/; 139/; 445/</td><td>Address belongs to the computer running this report.</td></tr>
+<tr><td>192.168.0.201</td><td></td><td></td><td>██:██:██:██:██:██</td><td>Ethernet</td><td>ICMP reply</td><td>0</td><td>False</td><td>Synology NAS (likely)</td><td>5000/</td><td></td></tr>
+</table>
+  </div>
+
+  <div class="section">
+    <h2>Subnet Scan Results</h2>
+    <table>
+<colgroup><col/><col/><col/><col/><col/></colgroup>
+<tr><th>Subnet</th><th>HostCapacity</th><th>AddressesTested</th><th>PingResponsive</th><th>Status</th></tr>
+<tr><td>192.168.0.0/24</td><td>254</td><td>254</td><td>5</td><td>Scanned</td></tr>
+</table>
+  </div>
+
+  <div class="section">
+    <h2>Local Windows System</h2>
+    <table>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<tr><th>ComputerName</th><th>CurrentUser</th><th>Manufacturer</th><th>Model</th><th>OperatingSystem</th><th>OSVersion</th><th>OSBuild</th><th>InstalledRAMGB</th><th>Processor</th><th>PowerShellVersion</th><th>RunningAsAdmin</th><th>ScanStarted</th></tr>
+<tr><td>DESKTOP-282LTKE</td><td>DESKTOP-282LTKE\Vijaysingh</td><td>ASUS</td><td>System Product Name</td><td>Microsoft Windows 11 Pro</td><td>10.0.26200</td><td>26200</td><td>15.21</td><td>AMD Ryzen 7 7700X 8-Core Processor             </td><td>5.1.26100.8894</td><td>True</td><td>26/07/2026 12:07:06 PM</td></tr>
+</table>
+  </div>
+
+  <div class="section">
+    <h2>Network Adapters</h2>
+    <table>
+<colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
+<tr><th>InterfaceIndex</th><th>Alias</th><th>Description</th><th>Status</th><th>LinkSpeed</th><th>MacAddress</th><th>IPv4</th><th>DefaultGateway</th><th>DnsServers</th><th>DhcpEnabled</th></tr>
+<tr><td>2</td><td>Ethernet 2</td><td>VirtualBox Host-Only Ethernet Adapter</td><td>Up</td><td>1 Gbps</td><td>██:██:██:██:██:██</td><td>192.168.56.1/24</td><td></td><td>fec0:0:0:ffff::1, fec0:0:0:ffff::2, fec0:0:0:ffff::3</td><td>False</td></tr>
+<tr><td>10</td><td>Ethernet</td><td>Realtek Gaming 2.5GbE Family Controller</td><td>Up</td><td>1 Gbps</td><td>██:██:██:██:██:██</td><td>192.168.0.135/24</td><td>192.168.0.1</td><td>192.168.0.1</td><td>True</td></tr>
+<tr><td>16</td><td>WiFi</td><td>Realtek 8852BE Wireless LAN WiFi 6 PCI-E NIC</td><td>Disconnected</td><td>0 bps</td><td>██:██:██:██:██:██</td><td>169.254.207.113/16</td><td></td><td>192.168.0.1</td><td></td></tr>
+</table>
+  </div>
+
+  <div class="section">
+    <h2>IPv4 Routing Table</h2>
+    <table>
+<colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<tr><th>DestinationPrefix</th><th>NextHop</th><th>InterfaceAlias</th><th>RouteMetric</th><th>Protocol</th><th>State</th></tr>
+<tr><td>0.0.0.0/0</td><td>192.168.0.1</td><td>Ethernet</td><td>0</td><td>NetMgmt</td><td>Alive</td></tr>
+<tr><td>127.0.0.0/8</td><td>0.0.0.0</td><td>Loopback Pseudo-Interface 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>127.0.0.1/32</td><td>0.0.0.0</td><td>Loopback Pseudo-Interface 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>127.255.255.255/32</td><td>0.0.0.0</td><td>Loopback Pseudo-Interface 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>192.168.0.0/24</td><td>0.0.0.0</td><td>Ethernet</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>192.168.0.135/32</td><td>0.0.0.0</td><td>Ethernet</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>192.168.0.255/32</td><td>0.0.0.0</td><td>Ethernet</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>192.168.56.0/24</td><td>0.0.0.0</td><td>Ethernet 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>192.168.56.1/32</td><td>0.0.0.0</td><td>Ethernet 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>192.168.56.255/32</td><td>0.0.0.0</td><td>Ethernet 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>224.0.0.0/4</td><td>0.0.0.0</td><td>Loopback Pseudo-Interface 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>224.0.0.0/4</td><td>0.0.0.0</td><td>Local Area Connection* 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>224.0.0.0/4</td><td>0.0.0.0</td><td>Local Area Connection* 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>224.0.0.0/4</td><td>0.0.0.0</td><td>WiFi</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>224.0.0.0/4</td><td>0.0.0.0</td><td>Ethernet 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>224.0.0.0/4</td><td>0.0.0.0</td><td>Ethernet</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>255.255.255.255/32</td><td>0.0.0.0</td><td>WiFi</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>255.255.255.255/32</td><td>0.0.0.0</td><td>Local Area Connection* 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>255.255.255.255/32</td><td>0.0.0.0</td><td>Local Area Connection* 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>255.255.255.255/32</td><td>0.0.0.0</td><td>Loopback Pseudo-Interface 1</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>255.255.255.255/32</td><td>0.0.0.0</td><td>Ethernet 2</td><td>256</td><td>Local</td><td>Alive</td></tr>
+<tr><td>255.255.255.255/32</td><td>0.0.0.0</td><td>Ethernet</td><td>256</td><td>Local</td><td>Alive</td></tr>
+</table>
+  </div>
+
+  <div class="section">
+    <h2>ARP / Neighbor Cache</h2>
+    <table>
+<colgroup><col/><col/><col/><col/></colgroup>
+<tr><th>IPAddress</th><th>LinkLayerAddress</th><th>State</th><th>InterfaceAlias</th></tr>
+<tr><td>192.168.0.1</td><td>██:██:██:██:██:██</td><td>Reachable</td><td>Ethernet</td></tr>
+<tr><td>192.168.0.118</td><td>██:██:██:██:██:██</td><td>Stale</td><td>Ethernet</td></tr>
+<tr><td>192.168.0.2</td><td>██:██:██:██:██:██</td><td>Reachable</td><td>Ethernet</td></tr>
+<tr><td>192.168.0.201</td><td>██:██:██:██:██:██</td><td>Reachable</td><td>Ethernet</td></tr>
+<tr><td>224.0.0.2</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet</td></tr>
+<tr><td>224.0.0.22</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet</td></tr>
+<tr><td>224.0.0.251</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet</td></tr>
+<tr><td>224.0.0.252</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet</td></tr>
+<tr><td>239.255.255.250</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet</td></tr>
+<tr><td>224.0.0.2</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet 2</td></tr>
+<tr><td>224.0.0.22</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet 2</td></tr>
+<tr><td>224.0.0.251</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet 2</td></tr>
+<tr><td>224.0.0.252</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet 2</td></tr>
+<tr><td>239.255.255.250</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Ethernet 2</td></tr>
+<tr><td>224.0.0.2</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Local Area Connection* 1</td></tr>
+<tr><td>224.0.0.22</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Local Area Connection* 1</td></tr>
+<tr><td>239.255.255.250</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Local Area Connection* 1</td></tr>
+<tr><td>224.0.0.2</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Local Area Connection* 2</td></tr>
+<tr><td>224.0.0.22</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>Local Area Connection* 2</td></tr>
+<tr><td>224.0.0.2</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>WiFi</td></tr>
+<tr><td>224.0.0.22</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>WiFi</td></tr>
+<tr><td>239.255.255.250</td><td>██:██:██:██:██:██</td><td>Permanent</td><td>WiFi</td></tr>
+</table>
+  </div>
+
+  <div class="section warning">
+    <h2>Interpretation and Limitations</h2>
+    <ul><li>Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.</li>
+<li>A second router operating in access-point/bridge mode should appear on the same subnet. A double-NAT router can hide its downstream devices unless this PC has a route and the router permits traffic between subnets.</li>
+<li>Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear.</li></ul>
+  </div>
+
+  <div class="footer">
+    Files in this report package: PDF, HTML, CSV device inventory, JSON data, and scan log.
+  </div>
+</div>
+</body>
+</html>

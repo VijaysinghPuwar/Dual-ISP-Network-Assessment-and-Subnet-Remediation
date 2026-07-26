@@ -1,0 +1,10 @@
+[2026-07-26 12:31:56] [INFO] Authorized private-network inventory started.
+[2026-07-26 12:31:56] [INFO] Output directory: /Users/vijaysinhhpuwar/Desktop/Mac_Network_Inventory_20260726_123156
+[2026-07-26 12:31:56] [INFO] Auto-detected subnet: 192.168.0.0/24
+[2026-07-26 12:31:57] [INFO] Scanning subnet 192.168.0.0/24 (254 possible hosts).
+[2026-07-26 12:39:57] [WARN] Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.
+[2026-07-26 12:39:57] [WARN] A Mac connected behind a second double-NAT router can reveal that router's internal subnet even when the Windows PC cannot. Run this script on a Mac connected to each router for the best combined perspective.
+[2026-07-26 12:39:57] [WARN] Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear.
+[2026-07-26 12:39:57] [WARN] The script reports reachable services but does not determine whether software is patched or vulnerable.
+[2026-07-26 12:39:59] [OK] HTML report created: /Users/vijaysinhhpuwar/Desktop/Mac_Network_Inventory_20260726_123156/Network_Inventory_Report.html
+[2026-07-26 12:39:59] [INFO] Creating PDF with Google Chrome.
