@@ -900,10 +900,10 @@ HTML_HEAD
     printf '<h1>Mac Private Network Inventory</h1>\n'
     printf '<p>Computer: %s</p>\n' "$(html_escape "$COMPUTER_NAME")"
     printf '<p>Generated: %s</p>\n' "$(html_escape "$COMPLETED_AT")"
-    printf '<p>Perspective: %s — %s</p>\n' \
+    printf '<p>Perspective: %s - %s</p>\n' \
       "$(html_escape "$DEFAULT_INTERFACE")" \
       "$(html_escape "$DEFAULT_IP")"
-    printf '<div class="badge">Authorized RFC1918 inventory — no credential attacks or vulnerability exploitation</div>\n'
+    printf '<div class="badge">Authorized RFC1918 inventory: no credential attacks or vulnerability exploitation</div>\n'
     printf '</div>\n'
 
     printf '<div class="cards">\n'
@@ -1174,7 +1174,7 @@ ARP_RAW_FILE="$TEMP_DIRECTORY/arp_raw.txt"
 : > "$ARP_FILE"
 : > "$ARP_RAW_FILE"
 
-log_message "INFO" "Authorized private-network inventory started."
+log_message "INFO" "Mac Network Inventory v$VERSION: authorized private-network inventory started at $STARTED_AT."
 log_message "INFO" "Output directory: $OUTPUT_DIRECTORY"
 
 if ! detect_default_network; then

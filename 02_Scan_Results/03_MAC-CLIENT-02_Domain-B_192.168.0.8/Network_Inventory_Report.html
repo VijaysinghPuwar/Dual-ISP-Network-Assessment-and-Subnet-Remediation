@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mac Private Network Inventory</title>
+<style>
+@page { size: A4 landscape; margin: 10mm; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f3f6fa;
+  color: #172033;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.5px;
+}
+.container { max-width: 1500px; margin: 0 auto; padding: 24px; }
+.header {
+  background: linear-gradient(135deg, #152a45, #315f83);
+  color: white;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 18px;
+}
+.header h1 { margin: 0 0 7px; font-size: 28px; }
+.header p { margin: 4px 0; opacity: .93; }
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  font-size: 9px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.card, .section {
+  background: white;
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+}
+.card { padding: 13px 15px; }
+.card span {
+  display: block;
+  color: #526177;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.card strong { display: block; margin-top: 4px; font-size: 21px; }
+.section { padding: 16px; margin-bottom: 14px; }
+.section h2 {
+  margin: 0 0 10px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #e8eef5;
+  color: #173f63;
+  font-size: 17px;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  border: 1px solid #d8e0ea;
+  padding: 6px 7px;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+th { background: #eaf1f8; color: #173f63; }
+tr:nth-child(even) td { background: #f8fafc; }
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: Menlo, Monaco, monospace;
+  font-size: 9px;
+}
+.warning { border-left: 5px solid #bf7a00; background: #fff8e8; }
+.muted { color: #6c7889; font-style: italic; }
+.footer { color: #657287; text-align: center; font-size: 9px; padding: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>Mac Private Network Inventory</h1>
+<p>Computer: MAC-CLIENT-02</p>
+<p>Generated: 2026-07-26 12:55:01 +0530</p>
+<p>Perspective: en0 — 192.168.0.8</p>
+<div class="badge">Authorized RFC1918 inventory — no credential attacks or vulnerability exploitation</div>
+</div>
+<div class="cards">
+<div class="card"><span>Devices</span><strong>8</strong></div>
+<div class="card"><span>Addresses tested</span><strong>254</strong></div>
+<div class="card"><span>Subnets scanned</span><strong>1</strong></div>
+<div class="card"><span>Open TCP services</span><strong>13</strong></div>
+</div>
+<div class="section"><h2>Executive Summary</h2><table>
+<tr><th>Duration</th><th>Default interface</th><th>Mac IPv4</th><th>Default gateway</th><th>DNS</th><th>Port scan enabled</th></tr>
+<tr><td>29 seconds</td><td>en0</td><td>192.168.0.8</td><td>192.168.0.1</td><td>192.168.0.1</td><td>True</td></tr>
+</table></div>
+<div class="section"><h2>Discovered Device Inventory</h2><table>
+<tr><th>IP address</th><th>Hostname</th><th>MAC address</th><th>Interface</th><th>Reachability</th><th>Ping</th><th>Gateway</th><th>Likely device</th><th>Open TCP services</th><th>Notes</th></tr>
+<tr><td>192.168.0.1</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ICMP reply</td><td>1.135</td><td>true</td><td>Router / default gateway</td><td>53/DNS; 80/HTTP; 443/HTTPS</td><td>Configured as the default gateway on this Mac.</td></tr>
+<tr><td>192.168.0.8</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ICMP reply</td><td>0.375</td><td>false</td><td>This Mac</td><td>5000/Web service / Synology DSM HTTP</td><td>Address belongs to the Mac running this report.</td></tr>
+<tr><td>192.168.0.52</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ICMP reply</td><td>154.392</td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>192.168.0.56</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ARP / neighbor detected</td><td></td><td>false</td><td>Unknown network device</td><td></td><td>Host appears online but may block ICMP ping.</td></tr>
+<tr><td>192.168.0.107</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ICMP reply</td><td>0</td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>192.168.0.228</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ICMP reply</td><td>4.255</td><td>false</td><td>Network host with TCP services</td><td>80/HTTP</td><td></td></tr>
+<tr><td>192.168.0.242</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ICMP reply</td><td>0.587</td><td>false</td><td>Synology NAS or DSM web device (likely)</td><td>22/SSH; 80/HTTP; 139/NetBIOS; 443/HTTPS; 445/SMB; 5000/Web service / Synology DSM HTTP; 5001/Synology DSM HTTPS; 6690/Synology Drive</td><td></td></tr>
+<tr><td>192.168.0.255</td><td></td><td>██:██:██:██:██:██</td><td>en0</td><td>ARP / neighbor detected</td><td></td><td>false</td><td>Unknown network device</td><td></td><td>Host appears online but may block ICMP ping.</td></tr>
+</table></div>
+<div class="section"><h2>Subnet Scan Results</h2><table>
+<tr><th>Subnet</th><th>Network</th><th>Broadcast</th><th>Host capacity</th><th>Addresses tested</th><th>Ping responsive</th><th>Status</th></tr>
+<tr><td>192.168.0.0/24</td><td>192.168.0.0</td><td>192.168.0.255</td><td>254</td><td>254</td><td>6</td><td>Scanned</td></tr>
+</table></div>
+<div class="section"><h2>Local Mac</h2><table>
+<tr><th>Computer</th><th>User</th><th>Model</th><th>Identifier</th><th>Chip</th><th>Memory</th><th>Operating system</th></tr>
+<tr><td>MAC-CLIENT-02</td><td><user></td><td>Mac mini</td><td>Mac14,12</td><td>Apple M2 Pro</td><td>16 GB</td><td>macOS 26.5.1 (Build 25F80)</td></tr>
+</table></div>
+<div class="section"><h2>Network Adapters</h2><table>
+<tr><th>Hardware port</th><th>Device</th><th>Status</th><th>Media</th><th>MAC address</th><th>IPv4</th><th>Gateway</th><th>DNS</th></tr>
+<tr><td>Ethernet</td><td>en0</td><td>active</td><td>autoselect (1000baseT &lt;full-duplex&gt;)</td><td>██:██:██:██:██:██</td><td>192.168.0.8</td><td>192.168.0.1</td><td>192.168.0.1</td></tr>
+<tr><td>Ethernet Adapter (en6)</td><td>en6</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Ethernet Adapter (en7)</td><td>en7</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>AX88179A</td><td>en9</td><td>inactive</td><td>autoselect (none)</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Ethernet Adapter (en8)</td><td>en8</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Ethernet Adapter (en10)</td><td>en10</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt Bridge</td><td>bridge0</td><td>inactive</td><td>&lt;unknown type&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Wi-Fi</td><td>en1</td><td>inactive</td><td>autoselect</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt 1</td><td>en2</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt 2</td><td>en3</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt 3</td><td>en4</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt 4</td><td>en5</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+</table></div>
+<div class="section"><h2>IPv4 Routing Table</h2><pre>Routing tables
+
+Internet:
+Destination        Gateway            Flags               Netif Expire
+default            192.168.0.1        UGScg                 en0       
+127                127.0.0.1          UCS                   lo0       
+127.0.0.1          127.0.0.1          UH                    lo0       
+169.254            link#8             UCS                   en0      !
+192.168.0          link#8             UCS                   en0      !
+192.168.0.1/32     link#8             UCS                   en0      !
+192.168.0.1        ██:██:██:██:██:██   UHLWIir               en0   1197
+192.168.0.8/32     link#8             UCS                   en0      !
+192.168.0.8        ██:██:██:██:██:██  UHLWI                 lo0       
+192.168.0.242      ██:██:██:██:██:██   UHLWIi                en0   1146
+192.168.0.255      ██:██:██:██:██:██  UHLWbI                en0      !
+224.0.0/4          link#8             UmCS                  en0      !
+224.0.0.251        ██:██:██:██:██:██      UHmLWI                en0       
+239.255.102.18     ██:██:██:██:██:██    UHmLWI                en0       
+255.255.255.255/32 link#8             UCS                   en0      !</pre></div>
+<div class="section"><h2>ARP / Neighbor Cache</h2><pre>? (192.168.0.1) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.8) at ██:██:██:██:██:██ on en0 ifscope permanent [ethernet]
+? (192.168.0.52) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.56) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.107) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.228) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.242) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.255) at ██:██:██:██:██:██ on en0 ifscope [ethernet]</pre></div>
+<div class="section warning"><h2>Interpretation and Limitations</h2><ul>
+<li>Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.</li>
+<li>Running the scan from both Windows and macOS improves visibility because sleeping hosts, local firewalls, and cached neighbor information can produce different results from each computer.</li>
+<li>Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear.</li>
+<li>The script reports reachable services but does not determine whether software is patched or vulnerable.</li>
+</ul></div>
+<div class="footer">Files in this report package: PDF, HTML, CSV device inventory, JSON data, text report, and scan log.</div>
+</div></body></html>

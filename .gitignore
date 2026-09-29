@@ -1,7 +1,31 @@
-# macOS
-.DS_Store
-# Claude Code local settings
-.claude/
-# Safety backups (contain UNREDACTED originals — never publish)
+# Raw evidence stays local. Only sanitized derivatives are committed.
+artifacts/private/
+scan_raw/
+*.pcap
+*.pcapng
+*.cap
+*.etl
+*.pktmon
+*.gnmap
+nmap_*.xml
+
+# Local privacy denylist (real hostnames/usernames used by the privacy check)
+.privacy-denylist.txt
+
+# Backups that contain unredacted originals
 *_ORIGINALS_backup_*.zip
 *_backup_*.zip
+
+# Tooling
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/

@@ -1,0 +1,54 @@
+{
+  "Summary": {
+    "ReportGenerated": "2026-07-26 12:39:57 +0530",
+    "DurationSeconds": 481,
+    "SubnetsScanned": 1,
+    "AddressesTested": 254,
+    "DevicesDiscovered": 8,
+    "DefaultGateway": "192.168.0.1",
+    "OpenTcpServicesFound": 12,
+    "PortScanEnabled": true
+  },
+  "LocalSystem": {
+    "ComputerName": "MAC-CLIENT-01",
+    "CurrentUser": "<user>",
+    "ModelName": "Mac mini",
+    "ModelIdentifier": "Mac16,11",
+    "Chip": "Apple M4 Pro",
+    "Memory": "24 GB",
+    "OperatingSystem": "macOS 26.3.1 (Build 25D771280a)",
+    "DefaultInterface": "en0",
+    "IPv4Address": "192.168.0.201"
+  },
+  "NetworkAdapters": [
+    {"HardwarePort":"Ethernet","Device":"en0","Status":"active","Media":"autoselect (1000baseT <full-duplex,flow-control,energy-efficient-ethernet>)","MacAddress":"██:██:██:██:██:██","IPv4":"192.168.0.201","DefaultGateway":"192.168.0.1","DnsServers":"192.168.0.1"},
+    {"HardwarePort":"Ethernet Adapter (en5)","Device":"en5","Status":"inactive","Media":"none","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Ethernet Adapter (en6)","Device":"en6","Status":"inactive","Media":"none","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Ethernet Adapter (en7)","Device":"en7","Status":"inactive","Media":"none","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"USB 10/100 LAN","Device":"en8","Status":"inactive","Media":"autoselect (none)","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Thunderbolt Bridge","Device":"bridge0","Status":"inactive","Media":"<unknown type>","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Wi-Fi","Device":"en1","Status":"","Media":"autoselect (none)","MacAddress":"██:██:██:██:██:██","IPv4":"169.254.189.88","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Thunderbolt 1","Device":"en2","Status":"inactive","Media":"autoselect <full-duplex>","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Thunderbolt 2","Device":"en3","Status":"inactive","Media":"autoselect <full-duplex>","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""},
+    {"HardwarePort":"Thunderbolt 3","Device":"en4","Status":"inactive","Media":"autoselect <full-duplex>","MacAddress":"██:██:██:██:██:██","IPv4":"","DefaultGateway":"","DnsServers":""}
+  ],
+  "SubnetResults": [
+    {"Subnet":"192.168.0.0/24","PrefixLength":24,"Network":"192.168.0.0","Broadcast":"192.168.0.255","HostCapacity":254,"AddressesTested":254,"PingResponsive":5,"Status":"Scanned"}
+  ],
+  "Devices": [
+    {"IPAddress":"192.168.0.1","HostName":"","MacAddress":"","Interface":"en0","Reachability":"ICMP reply","PingMs":"0.764","IsDefaultGateway":true,"LikelyDevice":"Router / default gateway","OpenTcpServices":"53/DNS; 80/HTTP; 443/HTTPS","Notes":"Configured as the default gateway on this Mac."},
+    {"IPAddress":"192.168.0.2","HostName":"","MacAddress":"","Interface":"en0","Reachability":"ICMP reply","PingMs":"0.628","IsDefaultGateway":false,"LikelyDevice":"Synology NAS or DSM web device (likely)","OpenTcpServices":"22/SSH; 80/HTTP; 139/NetBIOS; 443/HTTPS; 445/SMB; 5000/Synology DSM HTTP / Web service; 5001/Synology DSM HTTPS; 6690/Synology Drive","Notes":""},
+    {"IPAddress":"192.168.0.118","HostName":"","MacAddress":"","Interface":"en0","Reachability":"ICMP reply","PingMs":"2.175","IsDefaultGateway":false,"LikelyDevice":"Unknown network device","OpenTcpServices":"","Notes":""},
+    {"IPAddress":"192.168.0.135","HostName":"","MacAddress":"","Interface":"en0","Reachability":"Detected","PingMs":"","IsDefaultGateway":false,"LikelyDevice":"Unknown network device","OpenTcpServices":"","Notes":""},
+    {"IPAddress":"192.168.0.156","HostName":"","MacAddress":"","Interface":"en0","Reachability":"ICMP reply","PingMs":"38.860","IsDefaultGateway":false,"LikelyDevice":"Unknown network device","OpenTcpServices":"","Notes":""},
+    {"IPAddress":"192.168.0.201","HostName":"","MacAddress":"","Interface":"en0","Reachability":"ICMP reply","PingMs":"0.107","IsDefaultGateway":false,"LikelyDevice":"This Mac","OpenTcpServices":"5000/Synology DSM HTTP / Web service","Notes":"Address belongs to the Mac running this report."},
+    {"IPAddress":"224.0.0.251","HostName":"mdns.mcast.net","MacAddress":"","Interface":"en0","Reachability":"Detected","PingMs":"","IsDefaultGateway":false,"LikelyDevice":"Unknown network device","OpenTcpServices":"","Notes":""},
+    {"IPAddress":"239.255.102.18","HostName":"","MacAddress":"","Interface":"en0","Reachability":"Detected","PingMs":"","IsDefaultGateway":false,"LikelyDevice":"Unknown network device","OpenTcpServices":"","Notes":""}
+  ],
+  "Warnings": [
+    "Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.",
+    "A Mac connected behind a second double-NAT router can reveal that router's internal subnet even when the Windows PC cannot. Run this script on a Mac connected to each router for the best combined perspective.",
+    "Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear.",
+    "The script reports reachable services but does not determine whether software is patched or vulnerable."
+  ]
+}

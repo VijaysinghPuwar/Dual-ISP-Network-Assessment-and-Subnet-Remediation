@@ -1,0 +1,83 @@
+# Repository validation only. Nothing here scans or contacts any private network.
+name: quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  powershell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pester and PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Set-PSRepository PSGallery -InstallationPolicy Trusted
+          Install-Module Pester -MinimumVersion 5.5 -Force
+          Install-Module PSScriptAnalyzer -Force
+      - name: PSScriptAnalyzer (tools)
+        shell: pwsh
+        run: |
+          $r = Invoke-ScriptAnalyzer -Path tools -Recurse -Severity Warning,Error
+          $r | Format-Table -AutoSize
+          if ($r) { exit 1 }
+      - name: PSScriptAnalyzer (original scanners, errors only)
+        shell: pwsh
+        run: |
+          $r = Invoke-ScriptAnalyzer -Path 01_Scanner_Scripts -Severity Error
+          $r | Format-Table -AutoSize
+          if ($r) { exit 1 }
+      - name: Pester
+        shell: pwsh
+        run: |
+          $c = New-PesterConfiguration
+          $c.Run.Path = 'tests'
+          $c.Run.Exit = $true
+          $c.Output.Verbosity = 'Detailed'
+          Invoke-Pester -Configuration $c
+
+  shell-and-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        run: shellcheck -S warning 01_Scanner_Scripts/*.sh
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ruff and pytest
+        run: |
+          pip install ruff pytest
+          ruff check tools tests
+          ruff format --check tools tests
+          pytest -q tests
+
+  docs-and-privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Markdown lint
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: |
+            **/*.md
+      - name: No em dashes in README
+        run: |
+          if grep -nP '\x{2014}' README.md; then echo "README contains em dashes"; exit 1; fi
+      - name: Privacy check (tracked files)
+        shell: pwsh
+        run: ./tools/privacy/Test-PublicArtifacts.ps1 -TrackedOnly
+      - name: No packet captures tracked
+        run: |
+          if git ls-files | grep -Ei '\.(pcap|pcapng|cap|etl)$'; then exit 1; fi
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

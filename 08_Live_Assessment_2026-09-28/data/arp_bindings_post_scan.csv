@@ -1,0 +1,4 @@
+"IP","Frames","DistinctMacs","MacOui","Conflict"
+"192.168.0.1","27","1","3C:6A:D2:XX:XX:XX","False"
+"192.168.0.2","2","1","90:09:D0:XX:XX:XX","False"
+"192.168.0.135","11","1","CC:28:AA:XX:XX:XX","False"

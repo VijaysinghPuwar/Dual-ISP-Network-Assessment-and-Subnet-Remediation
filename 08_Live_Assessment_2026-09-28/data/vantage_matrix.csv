@@ -1,0 +1,6 @@
+vantage_point,Domain_A_hosts,NAS_LAN_1,Domain_B_hosts,NAS_LAN_2
+WIN-CLIENT-01 (Jul),yes,yes,no,no
+MAC-CLIENT-01 (Jul),yes,yes,no,no
+MAC-CLIENT-02 (Jul),no,no,yes,yes
+WIN-CLIENT-02 (Jul),no,no,yes,yes
+WIN-CLIENT-01 (Sep),yes,yes,no,no

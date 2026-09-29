@@ -1,59 +1,104 @@
-# Dual-ISP Network Assessment and Subnet Remediation
+<p align="center">
+  <img src="assets/banner.svg" alt="Dual-ISP Network Assessment" width="100%">
+</p>
 
-Assessment of a home network running **two independent routers on two separate internet plans**, with a **Synology NAS bridging both**. The project documents a misconfiguration — both routers using the *same* LAN subnet (`192.168.0.0/24`) and *same* gateway IP (`192.168.0.1`) — and the remediation that moves Router B onto its own subnet (`192.168.20.0/24`).
+<p align="center">
+  <a href="https://github.com/VijaysinghPuwar/Dual-ISP-Network-Assessment-and-Subnet-Remediation/actions/workflows/quality.yml"><img src="https://github.com/VijaysinghPuwar/Dual-ISP-Network-Assessment-and-Subnet-Remediation/actions/workflows/quality.yml/badge.svg" alt="quality"></a>
+  <img src="https://img.shields.io/badge/Nmap-7.99-2f6fb0" alt="Nmap">
+  <img src="https://img.shields.io/badge/Wireshark-tshark-1679a7" alt="Wireshark">
+  <img src="https://img.shields.io/badge/PowerShell-5.1%20%7C%207-5391fe?logo=powershell&logoColor=white" alt="PowerShell">
+  <img src="https://img.shields.io/badge/Python-3.12-3776ab?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Bash-macOS-4eaa25?logo=gnubash&logoColor=white" alt="Bash">
+</p>
 
-**Assessment date:** 2026-07-26 · **Scope:** authorized private network only (inventory/connectivity; no exploits or config changes by the tooling).
+A home network with **two routers on two ISP lines** and a **NAS cabled to both** had inventories that contradicted each other depending on which computer ran the scan. I traced it to both routers using the same factory subnet and gateway (`192.168.0.1/24`), which made two separate LANs look identical at Layer 3. I moved the second LAN to `192.168.20.0/24`, then re-validated from the live network with Nmap, Wireshark and PowerShell.
 
----
+## Highlights
 
-## Start here
+- **Root cause found at Layer 2.** Two hosts asked for `192.168.0.1` and got two different vendor MACs. Same IP, two routers.
+- **Multi-vantage method.** Inventories from four machines on two LANs, compared side by side.
+- **Fix validated with evidence.** One gateway MAC, one DHCP server, zero duplicate addresses, and the NAS's new `192.168.20.2` confirmed but unreachable from the other LAN.
+- **Built the tooling.** Cross-platform scanners (PowerShell, Bash), a baseline collector, a packet summarizer, an Nmap-to-inventory parser, and a privacy gate, all tested in CI.
 
-Read **[`00_START_HERE/Context_Brief.md`](00_START_HERE/Context_Brief.md)** — it explains the entire setup, the problem, and the fix on one page. (Paste that file into a new assistant session for instant full context.)
+## Architecture
 
-## Folder map
+<p align="center">
+  <img src="assets/architecture.svg" alt="Topology before and after remediation" width="100%">
+</p>
 
-| Folder | Contents |
-|---|---|
-| `00_START_HERE/` | One-page context brief |
-| `01_Scanner_Scripts/` | The Windows (`.ps1`) and macOS (`.sh`) inventory scanners |
-| `02_Scan_Results/` | Scan output, **one subfolder per computer** that ran a scan |
-| `03_System_Diagnostics/` | Full single-PC Windows diagnostic (`AUDIOBOOK`) |
-| `04_Topology_Diagrams/` | Five diagrams: the four evolution stages plus a summary infographic |
-| `05_Report/` | The technical write-up — IEEE-style **PDF** and its slide-form `.pptx` twin |
-| `06_Presentation/` | Visual infographic slide deck (`.pptx`) |
-| `07_Media/` | Audio explainer (`.m4a`) |
-
-## The scanners (`01_Scanner_Scripts/`)
-
-Two custom, cross-platform inventory scripts were written for this assessment — one for Windows, one for macOS — so the same network could be mapped from every machine on it. Both are **read-only**: they inventory and test reachability only, and do **not** attempt passwords, exploit vulnerabilities, bypass firewalls, or change any configuration. Each auto-detects the local private (RFC 1918) subnet, runs an ICMP/ARP host-discovery sweep, resolves names where possible, checks a small set of common TCP service ports (e.g. SSH, SMB, HTTP/S, Synology DSM), and collects the host's own adapters, routes, gateway, and neighbor cache.
-
-| Script | Platform | Description |
+| | Before | After |
 |---|---|---|
-| **`Home_Network_Inventory_v1.5.ps1`** | Windows (PowerShell 5.1+ / PowerShell 7) | Discovers active private subnets on the PC, scans them, resolves DNS/NetBIOS names, tests common TCP ports, and exports a full report set — **HTML, PDF** (rendered via Edge/Chrome, with Word as fallback), **CSV, JSON**, and a run **log**. Options: `-Subnets`, `-SkipPortScan`, `-OpenReport`. *v1.5 also lists devices that have no open TCP ports.* |
-| **`Mac_Network_Inventory_v1.1.sh`** | macOS (Bash 3.2, the version shipped with macOS) | The macOS port of the same tool. Scans RFC 1918 IPv4 only and produces the matching outputs — **PDF, HTML, CSV, JSON, TXT**, and a **log**. Options: `--subnet`, `--open-report`. *v1.1 adds parallel discovery, correct CIDR filtering, MAC collection, multicast exclusion, and filtered ARP output.* |
+| ROUTER-B LAN | `192.168.0.0/24`, gateway `.1` | `192.168.20.0/24`, gateway `.1` |
+| NAS-01 LAN 2 | `192.168.0.242`, same /24 as LAN 1 | `192.168.20.2` static, no gateway |
+| Result | Two LANs, one identity, asymmetric NAS replies | Two isolated LANs, one NAS default route |
 
-Running both across the different computers is what produced the three vantage points below — and revealed that each machine could only see its own router's LAN.
+## Results
 
-## The three scan vantage points
+| Check (Sept 2026, from Domain A) | Result |
+|---|---|
+| Devices answering ARP for the gateway | 1 |
+| DHCP servers on the segment | 1 |
+| Duplicate-address alerts | 0 |
+| NAS-01 LAN 2 address (from its SSDP advertisement) | `192.168.20.2` |
+| Domain B reachable from Domain A | No |
 
-| Folder | Computer | Its IP | Sees |
-|---|---|---|---|
-| `02_Scan_Results/01_…_192.168.0.135` | Windows PC (DESKTOP-282LTKE) | `.135` | **Router A** LAN |
-| `02_Scan_Results/02_…_192.168.0.201` | Mac mini M4 Pro | `.201` | **Router A** LAN |
-| `02_Scan_Results/03_…_192.168.0.8`   | Mac mini M2 Pro | `.8`   | **Router B** LAN |
+<p align="center">
+  <img src="08_Live_Assessment_2026-09-28/charts/vantage_visibility.png" alt="What each vantage point could see" width="80%">
+</p>
 
-Each computer sees only its own router's LAN — that split is itself the evidence of the two-LAN problem.
+Full results, inventory and charts: [`08_Live_Assessment_2026-09-28/`](08_Live_Assessment_2026-09-28/).
 
-## Diagram sequence (`04_Topology_Diagrams/`)
+## Findings
 
-1. **Windows-scan, 5 devices** — earliest view, one router assumed.
-2. **Windows + Mac combined** — two Router-A scans merged.
-3. **Discovered dual-LAN subnet conflict** — the diagnosis.
-4. **Target-state subnet remediation** — the fix (Router B → `192.168.20.x`, Synology LAN2 → `192.168.20.2`).
-5. **Summary infographic** — one-page conflict-and-remediation overview.
+| Severity | Finding | Status |
+|---|---|---|
+| High | Both routers on `192.168.0.0/24` with gateway `192.168.0.1` | Remediated |
+| Medium | UPnP IGD enabled on the Domain A router | Open |
+| Low | NAS services (SSH, SMB, iSCSI, DSM over HTTP) open to the whole LAN | Open |
+| Low | NAS advertises its Domain B address into Domain A | Open |
+
+Details and recommendations: [`docs/findings.md`](docs/findings.md).
+
+## Tools
+
+| Tool | Language | Purpose |
+|---|---|---|
+| [`Home_Network_Inventory_v1.5.ps1`](01_Scanner_Scripts/Home_Network_Inventory_v1.5.ps1) | PowerShell | Windows LAN inventory: discovery, ports, HTML/CSV/JSON report |
+| [`Mac_Network_Inventory_v1.1.sh`](01_Scanner_Scripts/Mac_Network_Inventory_v1.1.sh) | Bash 3.2 | macOS port of the same scanner |
+| [`Get-NetworkBaseline.ps1`](tools/windows/Get-NetworkBaseline.ps1) | PowerShell | Adapters, routes, gateway MAC, ARP, DNS, TCP states, connectivity |
+| [`Invoke-PacketSummary.ps1`](tools/windows/Invoke-PacketSummary.ps1) | PowerShell + tshark | Metadata-only capture analysis: ARP bindings, DNS, retransmissions |
+| [`nmap_inventory.py`](tools/parsers/nmap_inventory.py) | Python | Nmap XML to sanitized asset inventory |
+| [`Test-PublicArtifacts.ps1`](tools/privacy/Test-PublicArtifacts.ps1) | PowerShell | Pre-publish check for MACs, public IPs, SIDs, secrets |
+
+```powershell
+.\tools\windows\Get-NetworkBaseline.ps1 -OutputDirectory .\artifacts
+.\tools\windows\Invoke-PacketSummary.ps1 -CaptureFile capture.pcapng -OutputDirectory .\artifacts\public
+python tools\parsers\nmap_inventory.py --vantage WIN-CLIENT-01 --csv inventory.csv scan.xml
+.\tools\privacy\Test-PublicArtifacts.ps1 -TrackedOnly
+```
+
+All tools are read-only. Run them only on networks you own or are authorized to test.
+
+## Repository
+
+| Path | Contents |
+|---|---|
+| [`00_START_HERE/`](00_START_HERE/Context_Brief.md) | One-page context brief |
+| [`01_Scanner_Scripts/`](01_Scanner_Scripts/) | Windows and macOS inventory scanners |
+| [`02_Scan_Results/`](02_Scan_Results/) | July scans, one folder per vantage point |
+| [`03_System_Diagnostics/`](03_System_Diagnostics/) | Diagnostic summary for the host that blocked ping |
+| [`04_Topology_Diagrams/`](04_Topology_Diagrams/) | Topology diagrams, July to target state |
+| [`05_Report/`](05_Report/) | IEEE-style report (PDF) and slides |
+| [`06_Presentation/`](06_Presentation/) | Visual slide deck |
+| [`07_Media/`](07_Media/) | Audio explainer |
+| [`08_Live_Assessment_2026-09-28/`](08_Live_Assessment_2026-09-28/) | September re-assessment: data and charts |
+| [`docs/`](docs/) | [Methodology](docs/methodology.md), [root cause](docs/root-cause-analysis.md), [validation](docs/validation.md), [troubleshooting playbook](docs/troubleshooting-playbook.md), [privacy](docs/privacy-and-sanitization.md) |
+| [`tools/`](tools/), [`tests/`](tests/) | Tooling with Pester and pytest suites |
+
+## Privacy
+
+Hostnames are replaced with asset IDs, MAC addresses are cut to the vendor prefix, and public IPs, raw captures and raw Nmap output are never committed. A privacy check runs on every push. See [`docs/privacy-and-sanitization.md`](docs/privacy-and-sanitization.md).
 
 ---
 
-## Privacy / redaction status
-
-This repository has been redacted for public sharing. **All hardware MAC addresses are removed** (blacked out in images/PDFs, replaced with `██` in text) because router/AP MACs can be looked up in public Wi-Fi-geolocation databases to approximate a physical location. Internal IPs and device/computer names are retained intentionally — they do not reveal location. The technical report masks MACs to the vendor prefix (OUI) only.
+**Vijaysingh Puwar** · [GitHub](https://github.com/VijaysinghPuwar)

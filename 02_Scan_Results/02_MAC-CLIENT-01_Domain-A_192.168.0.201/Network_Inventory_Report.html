@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mac Private Network Inventory</title>
+<style>
+@page { size: A4 landscape; margin: 10mm; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #f3f6fa;
+  color: #172033;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.5px;
+}
+.container { max-width: 1500px; margin: 0 auto; padding: 24px; }
+.header {
+  background: linear-gradient(135deg, #152a45, #315f83);
+  color: white;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 18px;
+}
+.header h1 { margin: 0 0 7px; font-size: 28px; }
+.header p { margin: 4px 0; opacity: .93; }
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 9px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  font-size: 9px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.card, .section {
+  background: white;
+  border: 1px solid #dbe3ed;
+  border-radius: 10px;
+}
+.card { padding: 13px 15px; }
+.card span {
+  display: block;
+  color: #526177;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.card strong { display: block; margin-top: 4px; font-size: 21px; }
+.section { padding: 16px; margin-bottom: 14px; }
+.section h2 {
+  margin: 0 0 10px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #e8eef5;
+  color: #173f63;
+  font-size: 17px;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  border: 1px solid #d8e0ea;
+  padding: 6px 7px;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+th { background: #eaf1f8; color: #173f63; }
+tr:nth-child(even) td { background: #f8fafc; }
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: Menlo, Monaco, monospace;
+  font-size: 9px;
+}
+.warning { border-left: 5px solid #bf7a00; background: #fff8e8; }
+.muted { color: #6c7889; font-style: italic; }
+.footer { color: #657287; text-align: center; font-size: 9px; padding: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>Mac Private Network Inventory</h1>
+<p>Computer: MAC-CLIENT-01</p>
+<p>Generated: 2026-07-26 12:39:57 +0530</p>
+<p>Perspective: en0 — 192.168.0.201</p>
+<div class="badge">Authorized RFC1918 inventory — no credential attacks or vulnerability exploitation</div>
+</div>
+<div class="cards">
+<div class="card"><span>Devices</span><strong>8</strong></div>
+<div class="card"><span>Addresses tested</span><strong>254</strong></div>
+<div class="card"><span>Subnets scanned</span><strong>1</strong></div>
+<div class="card"><span>Open TCP services</span><strong>12</strong></div>
+</div>
+<div class="section"><h2>Executive Summary</h2><table>
+<tr><th>Duration</th><th>Default interface</th><th>Mac IPv4</th><th>Default gateway</th><th>DNS</th><th>Port scan enabled</th></tr>
+<tr><td>481 seconds</td><td>en0</td><td>192.168.0.201</td><td>192.168.0.1</td><td>192.168.0.1</td><td>True</td></tr>
+</table></div>
+<div class="section"><h2>Discovered Device Inventory</h2><table>
+<tr><th>IP address</th><th>Hostname</th><th>MAC address</th><th>Interface</th><th>Reachability</th><th>Ping</th><th>Gateway</th><th>Likely device</th><th>Open TCP services</th><th>Notes</th></tr>
+<tr><td>192.168.0.1</td><td></td><td></td><td>en0</td><td>ICMP reply</td><td>0.764</td><td>true</td><td>Router / default gateway</td><td>53/DNS; 80/HTTP; 443/HTTPS</td><td>Configured as the default gateway on this Mac.</td></tr>
+<tr><td>192.168.0.2</td><td></td><td></td><td>en0</td><td>ICMP reply</td><td>0.628</td><td>false</td><td>Synology NAS or DSM web device (likely)</td><td>22/SSH; 80/HTTP; 139/NetBIOS; 443/HTTPS; 445/SMB; 5000/Synology DSM HTTP / Web service; 5001/Synology DSM HTTPS; 6690/Synology Drive</td><td></td></tr>
+<tr><td>192.168.0.118</td><td></td><td></td><td>en0</td><td>ICMP reply</td><td>2.175</td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>192.168.0.135</td><td></td><td></td><td>en0</td><td>Detected</td><td></td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>192.168.0.156</td><td></td><td></td><td>en0</td><td>ICMP reply</td><td>38.860</td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>192.168.0.201</td><td></td><td></td><td>en0</td><td>ICMP reply</td><td>0.107</td><td>false</td><td>This Mac</td><td>5000/Synology DSM HTTP / Web service</td><td>Address belongs to the Mac running this report.</td></tr>
+<tr><td>224.0.0.251</td><td>mdns.mcast.net</td><td></td><td>en0</td><td>Detected</td><td></td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+<tr><td>239.255.102.18</td><td></td><td></td><td>en0</td><td>Detected</td><td></td><td>false</td><td>Unknown network device</td><td></td><td></td></tr>
+</table></div>
+<div class="section"><h2>Subnet Scan Results</h2><table>
+<tr><th>Subnet</th><th>Network</th><th>Broadcast</th><th>Host capacity</th><th>Addresses tested</th><th>Ping responsive</th><th>Status</th></tr>
+<tr><td>192.168.0.0/24</td><td>192.168.0.0</td><td>192.168.0.255</td><td>254</td><td>254</td><td>5</td><td>Scanned</td></tr>
+</table></div>
+<div class="section"><h2>Local Mac</h2><table>
+<tr><th>Computer</th><th>User</th><th>Model</th><th>Identifier</th><th>Chip</th><th>Memory</th><th>Operating system</th></tr>
+<tr><td>MAC-CLIENT-01</td><td><user></td><td>Mac mini</td><td>Mac16,11</td><td>Apple M4 Pro</td><td>24 GB</td><td>macOS 26.3.1 (Build 25D771280a)</td></tr>
+</table></div>
+<div class="section"><h2>Network Adapters</h2><table>
+<tr><th>Hardware port</th><th>Device</th><th>Status</th><th>Media</th><th>MAC address</th><th>IPv4</th><th>Gateway</th><th>DNS</th></tr>
+<tr><td>Ethernet</td><td>en0</td><td>active</td><td>autoselect (1000baseT &lt;full-duplex,flow-control,energy-efficient-ethernet&gt;)</td><td>██:██:██:██:██:██</td><td>192.168.0.201</td><td>192.168.0.1</td><td>192.168.0.1</td></tr>
+<tr><td>Ethernet Adapter (en5)</td><td>en5</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Ethernet Adapter (en6)</td><td>en6</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Ethernet Adapter (en7)</td><td>en7</td><td>inactive</td><td>none</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>USB 10/100 LAN</td><td>en8</td><td>inactive</td><td>autoselect (none)</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt Bridge</td><td>bridge0</td><td>inactive</td><td>&lt;unknown type&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Wi-Fi</td><td>en1</td><td></td><td>autoselect (none)</td><td>██:██:██:██:██:██</td><td>169.254.189.88</td><td></td><td></td></tr>
+<tr><td>Thunderbolt 1</td><td>en2</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt 2</td><td>en3</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+<tr><td>Thunderbolt 3</td><td>en4</td><td>inactive</td><td>autoselect &lt;full-duplex&gt;</td><td>██:██:██:██:██:██</td><td></td><td></td><td></td></tr>
+</table></div>
+<div class="section"><h2>IPv4 Routing Table</h2><pre>Routing tables
+
+Internet:
+Destination        Gateway            Flags               Netif Expire
+default            192.168.0.1        UGScg                 en0       
+127                127.0.0.1          UCS                   lo0       
+127.0.0.1          127.0.0.1          UH                    lo0       
+169.254            link#7             UCS                   en0      !
+169.254            link#16            UCSI                  en1      !
+169.254.189.88/32  link#16            UCS                   en1      !
+192.168.0          link#7             UCS                   en0      !
+192.168.0.1/32     link#7             UCS                   en0      !
+192.168.0.1        ██:██:██:██:██:██  UHLWIir               en0   1190
+192.168.0.2        ██:██:██:██:██:██   UHLWIi                en0   1176
+192.168.0.118      ██:██:██:██:██:██    UHLWI                 en0      !
+192.168.0.135      ██:██:██:██:██:██   UHLWIi                en0      !
+192.168.0.201/32   link#7             UCS                   en0      !
+192.168.0.201      ██:██:██:██:██:██   UHLWI                 lo0       
+224.0.0/4          link#7             UmCS                  en0      !
+224.0.0/4          link#16            UmCSI                 en1      !
+224.0.0.251        ██:██:██:██:██:██      UHmLWI                en0       
+239.255.102.18     ██:██:██:██:██:██    UHmLWI                en0       
+255.255.255.255/32 link#7             UCS                   en0      !
+255.255.255.255/32 link#16            UCSI                  en1      !</pre></div>
+<div class="section"><h2>ARP / Neighbor Cache</h2><pre>? (192.168.0.1) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.2) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.3) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.4) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.5) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.6) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.7) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.8) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.9) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.10) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.11) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.12) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.13) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.14) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.15) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.16) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.17) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.18) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.19) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.20) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.21) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.22) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.23) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.24) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.25) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.26) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.27) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.28) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.29) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.30) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.31) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.32) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.33) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.34) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.35) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.36) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.37) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.38) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.39) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.40) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.41) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.42) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.43) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.44) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.45) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.46) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.47) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.48) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.49) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.50) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.51) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.52) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.53) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.54) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.55) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.56) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.57) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.58) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.59) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.60) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.61) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.62) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.63) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.64) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.65) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.66) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.67) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.68) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.69) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.70) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.71) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.72) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.73) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.74) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.75) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.76) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.77) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.78) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.79) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.80) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.81) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.82) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.83) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.84) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.85) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.86) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.87) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.88) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.89) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.90) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.91) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.92) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.93) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.94) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.95) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.96) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.97) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.98) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.99) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.100) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.101) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.102) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.103) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.104) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.105) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.106) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.107) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.108) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.109) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.110) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.111) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.112) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.113) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.114) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.115) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.116) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.117) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.118) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.119) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.120) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.121) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.122) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.123) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.124) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.125) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.126) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.127) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.128) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.129) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.130) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.131) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.132) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.133) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.134) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.135) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.136) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.137) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.138) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.139) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.140) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.141) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.142) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.143) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.144) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.145) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.146) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.147) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.148) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.149) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.150) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.151) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.152) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.153) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.154) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.155) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.156) at ██:██:██:██:██:██ on en0 ifscope [ethernet]
+? (192.168.0.157) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.158) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.159) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.160) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.161) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.162) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.163) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.164) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.165) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.166) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.167) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.168) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.169) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.170) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.171) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.172) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.173) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.174) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.175) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.176) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.177) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.178) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.179) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.180) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.181) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.182) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.183) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.184) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.185) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.186) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.187) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.188) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.189) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.190) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.191) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.192) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.193) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.194) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.195) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.196) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.197) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.198) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.199) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.200) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.201) at ██:██:██:██:██:██ on en0 ifscope permanent [ethernet]
+? (192.168.0.202) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.203) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.204) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.205) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.206) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.207) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.208) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.209) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.210) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.211) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.212) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.213) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.214) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.215) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.216) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.217) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.218) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.219) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.220) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.221) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.222) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.223) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.224) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.225) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.226) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.227) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.228) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.229) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.230) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.231) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.232) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.233) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.234) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.235) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.236) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.237) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.238) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.239) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.240) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.241) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.242) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.243) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.244) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.245) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.246) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.247) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.248) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.249) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.250) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.251) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.252) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.253) at (incomplete) on en0 ifscope [ethernet]
+? (192.168.0.254) at (incomplete) on en0 ifscope [ethernet]
+? (224.0.0.251) at ██:██:██:██:██:██ on en0 ifscope permanent [ethernet]
+? (239.255.102.18) at ██:██:██:██:██:██ on en0 ifscope permanent [ethernet]</pre></div>
+<div class="section warning"><h2>Interpretation and Limitations</h2><ul>
+<li>Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.</li>
+<li>A Mac connected behind a second double-NAT router can reveal that router's internal subnet even when the Windows PC cannot. Run this script on a Mac connected to each router for the best combined perspective.</li>
+<li>Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear.</li>
+<li>The script reports reachable services but does not determine whether software is patched or vulnerable.</li>
+</ul></div>
+<div class="footer">Files in this report package: PDF, HTML, CSV device inventory, JSON data, text report, and scan log.</div>
+</div></body></html>

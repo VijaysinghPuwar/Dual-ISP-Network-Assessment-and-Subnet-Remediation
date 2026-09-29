@@ -1,0 +1,14 @@
+﻿[2026-07-26 12:07:06] [INFO] Authorized private-network inventory started.
+[2026-07-26 12:07:06] [INFO] Output directory: <HOME>\Desktop\Network_Inventory_20260726_120706
+[2026-07-26 12:07:09] [INFO] Auto-detected subnets: 192.168.0.0/24
+[2026-07-26 12:07:10] [INFO] Scanning subnet 192.168.0.0/24 (254 possible hosts).
+[2026-07-26 12:09:37] [WARN] Device type is an evidence-based estimate from addresses, names, gateways, and common TCP ports; it is not authenticated operating-system identification.
+[2026-07-26 12:09:37] [WARN] A second router operating in access-point/bridge mode should appear on the same subnet. A double-NAT router can hide its downstream devices unless this PC has a route and the router permits traffic between subnets.
+[2026-07-26 12:09:37] [WARN] Offline, sleeping, firewall-filtered, guest-network-isolated, Wi-Fi client-isolated, or IPv6-only devices may not appear.
+[2026-07-26 12:09:37] [OK] HTML report created: <HOME>\Desktop\Network_Inventory_20260726_120706\Network_Inventory_Report.html
+[2026-07-26 12:09:37] [INFO] Creating PDF with msedge.exe
+[2026-07-26 12:09:39] [OK] PDF report created with msedge.exe: <HOME>\Desktop\Network_Inventory_20260726_120706\Network_Inventory_Report.pdf
+[2026-07-26 12:09:39] [OK] CSV device inventory: <HOME>\Desktop\Network_Inventory_20260726_120706\Network_Devices.csv
+[2026-07-26 12:09:39] [OK] JSON report data: <HOME>\Desktop\Network_Inventory_20260726_120706\Network_Inventory.json
+[2026-07-26 12:09:39] [OK] Log file: <HOME>\Desktop\Network_Inventory_20260726_120706\Network_Inventory.log
+[2026-07-26 12:09:39] [OK] Completed. Devices discovered: 5
